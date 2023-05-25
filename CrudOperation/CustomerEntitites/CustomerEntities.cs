@@ -7,8 +7,10 @@ namespace CustomerEntities
 {
     public class CustomerEntities : DbContext
     {
+
+
         public CustomerEntities(DbContextOptions<CustomerEntities> options)
-            : base(options)
+                    : base(options)
         {
 
         }
@@ -19,7 +21,6 @@ namespace CustomerEntities
         }
         public virtual DbSet<Customer> Customer { get; set; }
         public virtual DbSet<CustAddress> CustAddress { get; set; }
-
         public virtual DbSet<CustPassword> CustPassword { get; set; }
 
     }

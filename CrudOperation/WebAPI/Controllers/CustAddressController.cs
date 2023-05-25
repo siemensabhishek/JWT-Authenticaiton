@@ -1,4 +1,5 @@
 ﻿using CustomerEntities.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,6 +16,7 @@ namespace WebAPI.Controllers
             _entities = entities;
         }
 
+        [Authorize]
         [HttpGet("hello")]
         public string Get()
         {
@@ -28,6 +30,8 @@ namespace WebAPI.Controllers
         }
 
 
+
+        // Implementation of add customer Post method
         [HttpPost("AddAddress")]
         public async Task<IActionResult> AddAddress(AddAddress addAddress)
         {
@@ -43,7 +47,8 @@ namespace WebAPI.Controllers
 
         }
 
-        // Implemntation of Update Method
+
+        // Implemntation of update customer Put Method
         [HttpPut("UpdateAddress/{AddressId}")]
         public async Task<IActionResult> UpdateAddress([FromRoute] int AddressId, CustAddress updateAddress)
         {
@@ -57,6 +62,7 @@ namespace WebAPI.Controllers
             }
             return NotFound();
         }
+
 
         // Implementation fo Delete Method
         [HttpDelete("DeleteAddress/{AddressId}")]

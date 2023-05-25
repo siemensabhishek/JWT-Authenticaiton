@@ -8,5 +8,4 @@ namespace CustomerEntities.Models
         public int AddressId { get; set; }
         public string AddressText { get; set; }
     }
-
 }

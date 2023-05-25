@@ -10,6 +10,8 @@ namespace WebAPI.Controllers
     {
         private CustomerEntities.CustomerEntities _entities;
 
+        //public IActionResult Index()
+
         public CustPasswordController(CustomerEntities.CustomerEntities entities)
         {
             _entities = entities;

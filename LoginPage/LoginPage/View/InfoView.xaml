@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LoginPage.View"
         xmlns:vm="clr-namespace:LoginPage.ViewModel"
         mc:Ignorable="d"
-        Height="850" Width="800">
+        Height="1150" Width="800">
 
 
     <UserControl.DataContext>
@@ -27,7 +27,7 @@
 
 
 
-    <Grid>
+    <Grid Name="displayarea">
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition />
@@ -52,6 +52,8 @@
             Grid.Row="1"
             Orientation="Vertical"
             Margin="275,35,275,-63">
+
+           
 
             <TextBlock Text="Customer Info Page"
                        Margin="0 0 0 30"
@@ -112,7 +114,6 @@
 
 
 
-
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0" Height="83" Width="182">
                 <Button x:Name="btnEdit"
                     Command="{Binding EditCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
@@ -140,7 +141,24 @@
                     HorizontalAlignment="Center" />
 
 
+
+
+               
+
+
+
             </StackPanel>
+
+            <TextBlock x:Name="text1" FontSize="20" HorizontalAlignment="Left" Margin="0,30,0,40" TextWrapping="wrap" Text="" VerticalAlignment="Top" Height="90" Width="180" />
+
+
+            <TextBlock Text="{Binding ErrorMessage}"
+                       FontSize="20"
+                       FontWeight="Medium"
+                       Margin="0 4 0 1"
+                       TextWrapping="Wrap"
+                    />
+
 
 
 

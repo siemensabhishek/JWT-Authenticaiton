@@ -6,12 +6,9 @@ using System.Windows.Controls;
 
 namespace LoginPage
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
+
     public partial class MainWindow : Window
     {
-        private string _currView;
         private static int _viewIndex;
         private static UserControl viewHolder;
 
@@ -21,7 +18,7 @@ namespace LoginPage
             set
             {
                 _viewIndex = value;
-                //viewHolder.Content = new InfoView();
+
                 switch (value)
                 {
                     case 0:
@@ -44,6 +41,8 @@ namespace LoginPage
         }
 
         public static int? UserId { get; set; }
+        public static string token { get; set; }
+        public static string refreshToken { get; set; }
 
         public MainWindow()
         {
@@ -55,19 +54,5 @@ namespace LoginPage
             this.Content = viewHolder;
         }
 
-
-        //public string CurrentView
-        //{
-        //    get => _currView;
-        //    set
-        //    {
-        //        if (_currView == value)
-        //        {
-        //            return;
-        //        }
-        //        _currView = value;
-        //        viewHolder.Content = new InfoView();
-        //    }
-        //}
     }
 }

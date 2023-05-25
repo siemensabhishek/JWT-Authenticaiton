@@ -24,6 +24,7 @@
     </UserControl.Visibility>
     
     <Grid>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition />
@@ -120,9 +121,19 @@
                            FontWeight="Medium"
                            Margin="8 0 0 0"
                            Cursor="Hand" />
+
+                <!--<TextBlock x:Name="text1" FontSize="20" HorizontalAlignment="Left" Margin="0,30,0,40" TextWrapping="wrap" Text="" VerticalAlignment="Top" Height="20" Width="180" />-->
             </StackPanel>
 
-
+            <!--<Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="150" Height="40"
+                            CornerRadius="9">
+                        
+                    </Border>
+                            
+                </ControlTemplate>
+            </Button.Template>-->
 
         </StackPanel>
     </Grid>
