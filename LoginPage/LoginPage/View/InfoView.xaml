@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="LoginPage.View.InfoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoginPage.View"
+        xmlns:vm="clr-namespace:LoginPage.ViewModel"
+        mc:Ignorable="d"
+        Height="850" Width="800">
+
+
+    <UserControl.DataContext>
+        <vm:InfoViewModel/>
+    </UserControl.DataContext>
+
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+    </UserControl.Resources>
+
+    <UserControl.Visibility>
+        <Binding Path="IsViewVisible" Mode="TwoWay" Converter="{StaticResource BooleanToVisibility}" />
+    </UserControl.Visibility>
+
+
+
+
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Right" Width="800">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Info Page"
+                       Foreground="DarkBlue"
+                       FontSize="30"
+              
+                       Grid.Column="0" 
+                       Padding="20"/>
+
+        </Grid>
+        <StackPanel
+            Width="250"
+            Grid.Row="1"
+            Orientation="Vertical"
+            Margin="275,35,275,-63">
+
+            <TextBlock Text="Customer Info Page"
+                       Margin="0 0 0 30"
+                       FontSize="25"
+                       HorizontalAlignment="Center" />
+
+            <TextBlock Text="Id"
+                       FontSize="20"
+                       FontWeight="Medium"
+                       Margin="0 5 0 0"
+                    />
+            <TextBox x:Name="txtUser"
+                      IsReadOnly="True"
+                      Text="{Binding Username, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                     FontSize="13"
+                     FontWeight="Medium"
+                     CaretBrush="LightBlue"
+                     BorderBrush="DarkGray"
+                     BorderThickness="0,0,0,4"
+                     Height="28"
+                     VerticalContentAlignment="Center"  
+                     />
+
+            <TextBlock Text="First Name"
+                       FontSize="20"
+                       FontWeight="Medium"
+                       Margin="0 20 0 0"
+                    />
+            <TextBox
+                      IsReadOnly="{Binding IsReadOnly, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                       Text="{Binding Firstname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        FontSize="13"
+                        FontWeight="Medium"
+                        CaretBrush="LightBlue"
+                        BorderBrush="DarkGray"
+                        BorderThickness="0,0,0,4"
+                        Height="28"
+                        Margin="0,5,0,0" />
+
+
+            <TextBlock Text="Address"
+                       FontSize="20"
+                       FontWeight="Medium"
+                       Margin="0 20 0 0"
+                    />
+            <TextBox
+                    IsReadOnly="{Binding IsReadOnly, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                    Text="{Binding Address,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"
+                    FontSize="13"
+                    FontWeight="Medium"
+                    CaretBrush="LightBlue"
+                    BorderBrush="DarkGray"
+                    BorderThickness="0,0,0,4"
+                    Height="28"
+                    Margin="0,5,0,0" />
+
+
+
+
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,0" Height="83" Width="182">
+                <Button x:Name="btnEdit"
+                    Command="{Binding EditCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                        
+                    BorderThickness="0"
+                    Content="Edit"
+                    Foreground="White"
+                    Background="Blue"
+                    FontSize="12"
+                    Cursor="Hand"
+                    Margin="0,10,100,50"
+                    Padding="10 0 10 0"
+                    HorizontalAlignment="Center" />
+                <Button x:Name="btnSave"
+                   
+                    Command="{Binding SaveCommand, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                    BorderThickness="0"
+                    Content="Save"
+                    Foreground="White"
+                    Background="Blue"
+                    FontSize="12"
+                    Cursor="Hand"
+                    Margin="0,10,0,50"
+                    Padding="10 0 10 0"
+                    HorizontalAlignment="Center" />
+
+
+            </StackPanel>
+
+
+
+
+        </StackPanel>
+    </Grid>
+</UserControl>
